@@ -1,7 +1,7 @@
-const myProfile = () => (
+const MyProfile = () => (
   <div>
     profile
   </div>
-)
+);
 
-export default myProfile;
+export default MyProfile;

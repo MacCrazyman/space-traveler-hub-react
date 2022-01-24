@@ -1,7 +1,7 @@
-const rockets = () => (
+const Rockets = () => (
   <div>
     Rockets
   </div>
-)
+);
 
-export default rockets;
+export default Rockets;

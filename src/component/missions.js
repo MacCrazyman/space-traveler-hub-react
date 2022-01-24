@@ -1,7 +1,7 @@
-const missions = () => (
+const Missions = () => (
   <div>
     missions
   </div>
-)
+);
 
-export default missions;
+export default Missions;
