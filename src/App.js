@@ -1,5 +1,5 @@
 import {
-  NavLink, Outlet, useMatch, useResolvedPath,
+  NavLink, Outlet,
 } from 'react-router-dom';
 import logo from './img/planet.png';
 import './App.css';
@@ -33,7 +33,6 @@ function App() {
               <li key={link.id}>
                 <NavLink
                   to={link.path}
-                  style={{ textDecoration: useMatch({ path: useResolvedPath(link.path).pathname, end: true }) ? 'underline' : 'none' }}
                   className="nav-link px-2 nav-links mr-10"
                 >
                   {link.text}
