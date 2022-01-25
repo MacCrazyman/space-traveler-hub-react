@@ -9,6 +9,7 @@ import Rockets from './component/rockets';
 import Missions from './component/missions';
 import MyProfile from './component/myProfile';
 import store from './store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
