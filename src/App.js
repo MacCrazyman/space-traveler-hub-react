@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import logo from './img/planet.png';
 import './App.css';
 import { getRockets } from './redux/rockets/rockets';
@@ -38,7 +40,8 @@ function App() {
               <li key={link.id}>
                 <NavLink
                   to={link.path}
-                  className="nav-link px-2 nav-links mr-10">
+                  className="nav-link px-2 nav-links mr-10"
+                >
                   {link.text}
                 </NavLink>
               </li>

@@ -3,6 +3,11 @@ const LOAD_ROCKETS = 'spaceTraveler/rockets/GET_ROCKETS';
 
 const initialState = [];
 
+export const loadRockets = (payload) => ({
+  type: LOAD_ROCKETS,
+  payload,
+});
+
 export const getRocketsFromApi = async () => {
   const response = await fetch(ENDPOINT);
   const rockets = await response.json();
@@ -10,17 +15,19 @@ export const getRocketsFromApi = async () => {
 };
 
 export const getRockets = () => async (dispatch) => {
-  const rockets = getRocketsFromApi();
-  rockets.then((rocket) => {
-    const { id, rocket_name, rocket_type, flickr_images } = rocket;
-    dispatch(loadRockets({ id, rocket_name, rocket_type, flickr_images }));
+  const rocketItems = getRocketsFromApi();
+  rocketItems.then((rockets) => {
+    rockets.forEach((rocket) => {
+      const data = {
+        id: rocket.id,
+        rocketName: rocket.rocket_name,
+        rocketType: rocket.rocket_type,
+        flickrImages: rocket.flickr_images,
+      };
+      dispatch(loadRockets(data));
+    });
   });
 };
-
-export const loadRockets = (payload) => ({
-  type: LOAD_ROCKETS,
-  payload,
-});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -30,3 +37,5 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducer;

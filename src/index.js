@@ -5,10 +5,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Rockets from './component/rockets';
-import Missions from './component/missions';
-import MyProfile from './component/myProfile';
-import store from './store';
+import Rockets from './component/Rockets';
+import Missions from './component/Missions';
+import MyProfile from './component/Profile';
+import store from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
