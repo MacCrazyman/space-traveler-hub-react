@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchMissions from '../fetchData';
-import { bookMission } from '../redux/missions';
+import { loadMissions } from '../redux/missions';
 
 const Missions = () => {
   const missions = useSelector((store) => store.missions);
@@ -11,7 +11,7 @@ const Missions = () => {
   useEffect(async () => {
     if (missions.length) return;
     const missionsFetched = await fetchMissions();
-    dispatch(bookMission(missionsFetched));
+    dispatch(loadMissions(missionsFetched));
   }, []);
   return (
     <div>
