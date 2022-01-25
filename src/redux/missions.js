@@ -1,4 +1,4 @@
-const missionsReducer = (state = [{ value: 0 }], action) => {
+const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case 'BOOK_MISSION': {
       return state.concat(action.payload);
