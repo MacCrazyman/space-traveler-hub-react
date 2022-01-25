@@ -5,8 +5,8 @@ const missionsReducer = (state = [], action) => {
     }
     case 'LOAD_MISSIONS': {
       return action.payload.map((mission) => {
-        const { mission_id, mission_name, description } = mission;
-        return { mission_id, mission_name, description };
+        const { mission_id, mission_name, description } = mission; // eslint-disable-line camelcase
+        return { mission_id, mission_name, description }; // eslint-disable-line camelcase
       });
     }
     default:
