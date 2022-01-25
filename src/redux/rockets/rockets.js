@@ -22,7 +22,7 @@ export const getRockets = () => async (dispatch) => {
         id: rocket.id,
         rocketName: rocket.rocket_name,
         rocketType: rocket.rocket_type,
-        flickrImages: rocket.flickr_images,
+        flickrImages: rocket.flickr_images[0],
       };
       dispatch(loadRockets(data));
     });
