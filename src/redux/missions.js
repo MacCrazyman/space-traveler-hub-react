@@ -4,7 +4,10 @@ const missionsReducer = (state = [], action) => {
       return state.concat(action.payload);
     }
     case 'LOAD_MISSIONS': {
-      return action.payload;
+      return action.payload.map((mission) => {
+        const { mission_id, mission_name, description } = mission;
+        return { mission_id, mission_name, description };
+      });
     }
     default:
       return state;
