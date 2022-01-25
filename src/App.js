@@ -1,10 +1,15 @@
-import {
-  NavLink, Outlet,
-} from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import logo from './img/planet.png';
 import './App.css';
+import { getRockets } from './redux/rockets/rockets';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRockets());
+  }, []);
+
   const links = [
     {
       id: 1,
@@ -33,13 +38,11 @@ function App() {
               <li key={link.id}>
                 <NavLink
                   to={link.path}
-                  className="nav-link px-2 nav-links mr-10"
-                >
+                  className="nav-link px-2 nav-links mr-10">
                   {link.text}
                 </NavLink>
               </li>
             ))}
-
           </ul>
         </nav>
       </header>
