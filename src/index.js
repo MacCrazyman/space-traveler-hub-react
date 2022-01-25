@@ -7,9 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import Rockets from './component/rockets';
 import Missions from './component/missions';
 import MyProfile from './component/myProfile';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
@@ -19,6 +22,7 @@ ReactDOM.render(
         </Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
