@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import {
   NavLink, Outlet,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import fetchMissions from './fetchData';
+import { loadMissions } from './redux/missions/missions';
 import logo from './img/planet.png';
 import './App.css';
 
 function App() {
+  
   const links = [
     {
       id: 1,
@@ -23,6 +28,13 @@ function App() {
     },
   ];
 
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    const missionsFetched = await fetchMissions();
+    dispatch(loadMissions(missionsFetched));
+  }, []);
+  
   return (
     <div className="App">
       <header className="App-header">
