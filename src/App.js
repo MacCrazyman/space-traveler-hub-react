@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import fetchMissions from './fetchData';
-import { loadMissions } from './redux/missions/missions';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import fetchMissions from './fetchData';
+import { loadMissions } from './redux/missions/missions';
 import logo from './img/planet.png';
 import './App.css';
 import { getRockets } from './redux/rockets/rockets';
@@ -31,8 +31,6 @@ function App() {
       text: 'My Profile',
     },
   ];
-
-  const dispatch = useDispatch();
 
   useEffect(async () => {
     const missionsFetched = await fetchMissions();
