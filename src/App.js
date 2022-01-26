@@ -9,7 +9,6 @@ import logo from './img/planet.png';
 import './App.css';
 
 function App() {
-  
   const links = [
     {
       id: 1,
@@ -34,7 +33,7 @@ function App() {
     const missionsFetched = await fetchMissions();
     dispatch(loadMissions(missionsFetched));
   }, []);
-  
+
   return (
     <div className="App">
       <header className="App-header">

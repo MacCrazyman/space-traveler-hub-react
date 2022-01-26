@@ -1,10 +1,15 @@
 import { Button, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { bookMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((store) => store.missions);
 
   const dispatch = useDispatch();
+
+  const handleJoin = (id) => {
+    dispatch(bookMission(id));
+  };
 
   return (
     <div>
@@ -26,7 +31,7 @@ const Missions = () => {
                 {' '}
               </td>
               <td>
-                <Button>Not a member</Button>
+                <Button onClick={() => { handleJoin(mission.mission_id); }}>Not a member</Button>
                 {' '}
               </td>
               <td><Button>Join mission</Button></td>

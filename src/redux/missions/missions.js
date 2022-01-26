@@ -1,7 +1,9 @@
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case 'BOOK_MISSION': {
-      return state.concat(action.payload);
+      return state
+        .map((mission) => (mission.mission_id !== action
+          .payload ? mission : { ...mission, reserved: true }));
     }
     case 'LOAD_MISSIONS': {
       return action.payload.map((mission) => {
