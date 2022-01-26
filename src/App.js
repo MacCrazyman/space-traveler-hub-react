@@ -14,6 +14,11 @@ function App() {
     dispatch(getRockets());
   }, []);
 
+  useEffect(async () => {
+    const missionsFetched = await fetchMissions();
+    dispatch(loadMissions(missionsFetched));
+  }, []);
+
   const links = [
     {
       id: 1,
@@ -31,11 +36,6 @@ function App() {
       text: 'My Profile',
     },
   ];
-
-  useEffect(async () => {
-    const missionsFetched = await fetchMissions();
-    dispatch(loadMissions(missionsFetched));
-  }, []);
 
   return (
     <div className="App">
