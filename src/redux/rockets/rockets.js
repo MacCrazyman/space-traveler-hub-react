@@ -33,7 +33,7 @@ export const getRockets = () => async (dispatch) => {
       const data = {
         id: rocket.id,
         rocketName: rocket.rocket_name,
-        rocketType: rocket.rocket_type,
+        description: rocket.description,
         flickrImages: rocket.flickr_images[0],
       };
       dispatch(loadRockets(data));
