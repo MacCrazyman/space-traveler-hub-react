@@ -10,7 +10,7 @@ const MyProfile = () => {
         <h2>My missions</h2>
         <ListGroup>
           {missions.filter((mission) => mission.reserved).map((mission) => (
-            <ListGroupItem key={mission.mission_id}>{mission.name}</ListGroupItem>
+            <ListGroupItem key={mission.mission_id}>{mission.mission_name}</ListGroupItem>
           ))}
         </ListGroup>
       </div>
