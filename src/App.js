@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import fetchMissions from './fetchData';
+import { loadMissions } from './redux/missions/missions';
 import logo from './img/planet.png';
 import './App.css';
 import { getRockets } from './redux/rockets/rockets';
@@ -10,6 +12,11 @@ function App() {
 
   useEffect(() => {
     dispatch(getRockets());
+  }, []);
+
+  useEffect(async () => {
+    const missionsFetched = await fetchMissions();
+    dispatch(loadMissions(missionsFetched));
   }, []);
 
   const links = [

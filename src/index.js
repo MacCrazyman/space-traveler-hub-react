@@ -4,8 +4,9 @@ import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Rockets from './component/RocketsContainer';
-import Missions from './component/Missions';
+import Missions from './component/missions';
 import MyProfile from './component/Profile';
 import store from './redux/store';
 
