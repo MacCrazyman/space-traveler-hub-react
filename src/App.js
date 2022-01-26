@@ -1,10 +1,17 @@
-import {
-  NavLink, Outlet,
-} from 'react-router-dom';
+import { useEffect } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import logo from './img/planet.png';
 import './App.css';
+import { getRockets } from './redux/rockets/rockets';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRockets());
+  }, []);
+
   const links = [
     {
       id: 1,
@@ -39,7 +46,6 @@ function App() {
                 </NavLink>
               </li>
             ))}
-
           </ul>
         </nav>
       </header>
