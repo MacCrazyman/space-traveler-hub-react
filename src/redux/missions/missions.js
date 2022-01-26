@@ -1,12 +1,16 @@
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case 'BOOK_MISSION': {
-      return state.concat(action.payload);
+      return state
+        .map((mission) => (mission.mission_id !== action
+          .payload ? mission : { ...mission, reserved: !mission.reserved }));
     }
     case 'LOAD_MISSIONS': {
       return action.payload.map((mission) => {
         const { mission_id, mission_name, description } = mission; // eslint-disable-line camelcase
-        return { mission_id, mission_name, description }; // eslint-disable-line camelcase
+        return {
+          mission_id, mission_name, description, reserved: false, // eslint-disable-line camelcase
+        };
       });
     }
     default:
