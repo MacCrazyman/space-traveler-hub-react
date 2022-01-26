@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ListGroupItem } from 'react-bootstrap';
 
 const MyRocket = ({ rocketName }) => (
-  <div>
+  <ListGroupItem>
     <p>{rocketName}</p>
-  </div>
+  </ListGroupItem>
 );
 
 MyRocket.propTypes = {

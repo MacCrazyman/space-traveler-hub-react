@@ -1,4 +1,6 @@
-import { Badge, Button, Table } from 'react-bootstrap';
+import {
+  Badge, Button, Container, Table,
+} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { bookMission } from '../redux/missions/missions';
 
@@ -12,7 +14,7 @@ const Missions = () => {
   };
 
   return (
-    <div>
+    <Container className="text-left">
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -25,19 +27,19 @@ const Missions = () => {
         <tbody>
           {missions.map((mission) => (
             <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
+              <th>{mission.mission_name}</th>
               <td>
                 {mission.description}
                 {' '}
               </td>
-              <td>
+              <td className="content-center">
                 <Badge bg={mission.reserved ? 'secondary' : 'info'}>
                   {mission.reserved ? 'Active member' : 'NOT A MEMBER'}
                 </Badge>
                 {' '}
               </td>
-              <td>
-                <Button onClick={() => { handleJoin(mission.mission_id); }}>
+              <td className="content-center">
+                <Button variant={mission.reserved ? 'outline-danger' : 'outline-secondary'} onClick={() => { handleJoin(mission.mission_id); }}>
                   {mission.reserved ? 'Leave mission' : 'Join mission'}
                 </Button>
               </td>
@@ -46,7 +48,7 @@ const Missions = () => {
           ))}
         </tbody>
       </Table>
-    </div>
+    </Container>
   );
 };
 

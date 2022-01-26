@@ -1,4 +1,6 @@
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import {
+  Col, Container, ListGroup, ListGroupItem, Row,
+} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import MyRocket from './MyRocket';
 
@@ -13,17 +15,22 @@ const MyProfile = () => {
     ));
 
   return (
-    <div>
-      <div>
-        <h2>My missions</h2>
-        <ListGroup>
-          {missions.filter((mission) => mission.reserved).map((mission) => (
-            <ListGroupItem key={mission.mission_id}>{mission.mission_name}</ListGroupItem>
-          ))}
-        </ListGroup>
-      </div>
-      <div>{myRockets}</div>
-    </div>
+    <Container className="text-left">
+      <Row>
+        <Col>
+          <h2>My missions</h2>
+          <ListGroup>
+            {missions.filter((mission) => mission.reserved).map((mission) => (
+              <ListGroupItem key={mission.mission_id}>{mission.mission_name}</ListGroupItem>
+            ))}
+          </ListGroup>
+        </Col>
+        <Col>
+          <h2>My rockets</h2>
+          <ListGroup>{myRockets}</ListGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
