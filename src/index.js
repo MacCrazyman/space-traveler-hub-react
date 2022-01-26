@@ -17,8 +17,8 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Rockets />} />
-            <Route path="missions" element={<Missions />} />
-            <Route path="profile" element={<MyProfile />} />
+            <Route path="/missions" element={<Missions />} />
+            <Route path="/profile" element={<MyProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>
