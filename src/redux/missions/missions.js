@@ -3,7 +3,7 @@ const missionsReducer = (state = [], action) => {
     case 'BOOK_MISSION': {
       return state
         .map((mission) => (mission.mission_id !== action
-          .payload.id ? mission : { ...mission, reserved: action.payload.reservedStatus }));
+          .payload ? mission : { ...mission, reserved: !mission.reserved }));
     }
     case 'LOAD_MISSIONS': {
       return action.payload.map((mission) => {

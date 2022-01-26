@@ -7,8 +7,8 @@ const Missions = () => {
 
   const dispatch = useDispatch();
 
-  const handleJoin = (id, reservedStatus) => {
-    dispatch(bookMission({ id, reservedStatus }));
+  const handleJoin = (id) => {
+    dispatch(bookMission(id));
   };
 
   return (
@@ -35,7 +35,7 @@ const Missions = () => {
                 {' '}
               </td>
               <td>
-                <Button onClick={() => { handleJoin(mission.mission_id, !mission.reserved); }}>
+                <Button onClick={() => { handleJoin(mission.mission_id); }}>
                   Join mission
                 </Button>
               </td>
