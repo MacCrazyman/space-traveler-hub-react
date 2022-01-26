@@ -1,4 +1,4 @@
-import { Button, Table } from 'react-bootstrap';
+import { Badge, Button, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { bookMission } from '../redux/missions/missions';
 
@@ -31,12 +31,16 @@ const Missions = () => {
                 {' '}
               </td>
               <td>
-                <Button>Not a member</Button>
+                <Badge bg="secondary">
+                  {!mission.reserved && 'NOT A MEMBER'}
+                  {mission.reserved && 'Active member'}
+                </Badge>
                 {' '}
               </td>
               <td>
                 <Button onClick={() => { handleJoin(mission.mission_id); }}>
-                  Join mission
+                  {!mission.reserved && 'Join mission'}
+                  {mission.reserved && 'Leave mission'}
                 </Button>
               </td>
 
