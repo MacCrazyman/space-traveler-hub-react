@@ -11,7 +11,7 @@ const MyProfile = () => {
     .map((rocket) => (
       <MyRocket key={rocket.id} rocketName={rocket.rocketName} />
     ));
-  
+
   return (
     <div>
       <div>
@@ -22,7 +22,7 @@ const MyProfile = () => {
           ))}
         </ListGroup>
       </div>
-    <div>{myRockets}</div>
+      <div>{myRockets}</div>
     </div>
   );
 };
