@@ -16,7 +16,7 @@ Project created using `create-react-app` and implementing `react-redux` to retre
 
 ## Live Demo
 
-[Live Demo Link](https://maccrazyman.github.io/space-traveler-hub-react/)
+[Live Demo Link](https://books-store-maccrazyman.herokuapp.com/)
 
 
 ## Getting Started
@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple example steps.
     ````
     npm start
     ````
-* You can also open the [GitHub pages deployment](https://maccrazyman.github.io/space-traveler-hub-react/) to see a live version of the webpage.
+* You can also open the [Heroku deployment](https://books-store-maccrazyman.herokuapp.com/) to see a live version of the webpage.
 
 
 
