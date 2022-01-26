@@ -31,16 +31,14 @@ const Missions = () => {
                 {' '}
               </td>
               <td>
-                <Badge bg="secondary">
-                  {!mission.reserved && 'NOT A MEMBER'}
-                  {mission.reserved && 'Active member'}
+                <Badge bg={mission.reserved ? 'secondary' : 'info'}>
+                  {mission.reserved ? 'Active member' : 'NOT A MEMBER'}
                 </Badge>
                 {' '}
               </td>
               <td>
                 <Button onClick={() => { handleJoin(mission.mission_id); }}>
-                  {!mission.reserved && 'Join mission'}
-                  {mission.reserved && 'Leave mission'}
+                  {mission.reserved ? 'Leave mission' : 'Join mission'}
                 </Button>
               </td>
 
