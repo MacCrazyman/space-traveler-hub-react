@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Container, Row, Col } from 'react-bootstrap';
 import { reserve, cancel } from '../redux/rockets/rockets';
 import Rocket from './Rocket';
 
@@ -33,10 +34,11 @@ const Rockets = () => {
   ));
 
   return (
-    <div>
-      <div>{rockets}</div>
-      <hr />
-    </div>
+    <Container>
+      <Row>
+        <Col sm={12}>{rockets}</Col>
+      </Row>
+    </Container>
   );
 };
 

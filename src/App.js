@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import {
+  Navbar, Container, Nav, Image,
+} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import fetchMissions from './fetchData';
 import { loadMissions } from './redux/missions/missions';
@@ -38,11 +41,15 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <nav>
-          <ul>
+    <div>
+      <Navbar bg="light" expand="lg" className="border-bottom mb-5">
+        <Container>
+          <Navbar.Brand>
+            <Image fluid src={logo} />
+            {' '}
+            <strong>Space Travelers&apos; Hub</strong>
+          </Navbar.Brand>
+          <Nav className="mr-auto">
             {links.map((link) => (
               <li key={link.id}>
                 <NavLink
@@ -53,9 +60,9 @@ function App() {
                 </NavLink>
               </li>
             ))}
-          </ul>
-        </nav>
-      </header>
+          </Nav>
+        </Container>
+      </Navbar>
 
       <main>
         <Outlet />
