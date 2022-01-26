@@ -15,7 +15,7 @@ const MyProfile = () => {
     ));
 
   return (
-    <Container>
+    <Container className="text-left">
       <Row>
         <Col>
           <h2>My missions</h2>
